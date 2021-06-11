@@ -1,0 +1,7 @@
+## Anotações
+
+O modelo operacional é para manter a integridade, a baixa redundância de dados e manter a empresa funcionando. Ele registra as operações que cocorrem na empresa. O modelo analítico é prover informação gerencial, ele não possui problemas de redundância e de volume de dados. São modelos diferentes com finalidades diferentes.
+
+Normalmente informações gerenciais não precisma vir no menor nível de detalhe, depende da granularidade que é interessante em nível gerencial. O nível de detalhe que vai ser fornecido no sistema se chama granularidade e é muito importante para definir a infraestrutura que vai suportar o sistema e como vai se desenhar o projeto. A Granularidade precisa estar diretamente ligada a necessidade do apoio à decisão.
+
+Para construir um DW é necessário entender do negócio, compreender a estrutura de dados e desenvolver processos de carga e transformação dos dados que envolvem ferramentas e scripts. Um ambiente analítico não deve interferir em um sistema transacional, para evitar que uma consulta analítica pare um serviço operacional. A modelagem do sistema transacional não é própria para serem feitas análisese também há a consolidação de diversas fontes de dados provindas de diversos sistemas transacionais. Problemas na construção de data warehouses: diferentes plataformas e arquiteturas de dados, bancos de dados inacessíveis, qualidade de dados e estruturas de dados, falta de documentação e desconhecimento do negócio.
