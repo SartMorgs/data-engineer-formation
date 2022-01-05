@@ -17,6 +17,19 @@ docker pull dpage/pgadmin4
 docker run --name pgadmin4 --network=cloudera-postgres -e PGADMIN_DEFAULT_EMAIL=msartor@weg.net -e PGADMIN_DEFAULT_PASSWORD=@Kisuco5004 -p 15432:80 -d dpage/pgadmin4
 ```
 
+Also is necessaring a mongodb
+
+``` bash
+docker pull mongo
+docker run --name mongodb-cloudera --network=mongo-network -e MONGO_INITDB_ROOT_USERNAME=msartor -e MONGO_INITDB_ROOT_PASSWORD=@Kisuco5004 -v $(pwd):/data/db -p 27017:27017 -d mongo
+```
+
+And a database administrator for this.
+``` bash
+docker pull mongo-express
+docker run --name mongo-express -e ME_CONFIG_BASICAUTH_USERNAME=msartor -e ME_CONFIG_BASICAUTH_PASSWORD=@Kisuco5004 -e ME_CONFIG_MONGODB_PORT=27017 -e ME_CONFIG_MONGODB_ADMINUSERNAME=msartor -e ME_CONFIG_MONGODB_ADMINPASSWORD=@Kisuco5004 -p 8081:8081 -d mongo-express
+```
+
 Finally, cloudera-quickstart docker version (used on course as VM).
 
 ```bash
